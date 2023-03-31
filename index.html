@@ -1,0 +1,78 @@
+<!--
+ * @version:
+ * @Author: wenlan
+ * @Date: 2023-03-10 18:18:41
+ * @LastEditors: wenlan
+ * @LastEditTime: 2023-03-30 11:35:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=0.2,maximum-scale=0.2,user-scalable=yes,shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <title>gyouhome-专业的租房网址,给你家</title>
+    <style>
+      :root {
+        /* 全局主题色 */
+        --primary-color: #651fff;
+      }
+      #loader {
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        transform: translate(-50%, -50%);
+        height: 80px;
+        position: absolute;
+      }
+      #loader span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        letter-spacing: 5px;
+      }
+
+      #loader span:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 0.3px var(--primary-color);
+      }
+
+      #loader span:nth-child(2) {
+        color: var(--primary-color);
+        -webkit-text-stroke: 1px var(--primary-color);
+        animation: uiverse723 3s ease-in-out infinite;
+      }
+
+      @keyframes uiverse723 {
+        0%,
+        100% {
+          clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+        }
+
+        50% {
+          clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader">
+        <span>gyouhome</span>
+        <span>gyouhome</span>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      const item = JSON.parse(window.localStorage.getItem('persist:root'))
+      const MainColor = JSON.parse(item.theme).themeColor[400]
+      MainColor ? document.querySelector(':root').setAttribute('style', `--primary-color:${MainColor}`) : null
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

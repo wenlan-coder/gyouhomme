@@ -1,0 +1,18 @@
+@import url('./reset.css');
+#nprogress .bar {
+  background: var(--primary-color) !important;
+  height: 3px !important;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+#root {
+  width: 100%;
+  height: 100vh;
+}
+:root {
+  /* 全局主题色 */
+  --primary-color: #651fff;
+}

@@ -1,0 +1,57 @@
+/*
+ * @version:
+ * @Author: wenlan
+ * @Date: 2023-03-13 11:27:55
+ * @LastEditors: wenlan
+ * @LastEditTime: 2023-03-18 16:18:12
+ */
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+body ::selection {
+  background: var(--primary-color);
+}
+/*火狐浏览器滚动条样式*/
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+  }
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+  height: 7px;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(200, 200, 200, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(160, 160, 160, 0.8);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+.hidden-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0);
+}
+.hidden-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+.hidden-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+.hidden-scrollbar:hover::-webkit-scrollbar-thumb:active {
+  background-color: rgba(100, 100, 100, 0.8);
+}
